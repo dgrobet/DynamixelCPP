@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D3885CEE1B01E484007CC273 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3885CED1B01E484007CC273 /* main.cpp */; };
+		D3885CF61B01E51E007CC273 /* Dynamixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3885CF41B01E51E007CC273 /* Dynamixel.cpp */; };
+		D3885CFA1B01E74F007CC273 /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3885CF81B01E74F007CC273 /* libboost_system-mt.dylib */; };
+		D3885CFC1B023A9D007CC273 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3885CFB1B023A9D007CC273 /* libboost_thread-mt.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,10 @@
 /* Begin PBXFileReference section */
 		D3885CEA1B01E484007CC273 /* DynamixelCpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DynamixelCpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3885CED1B01E484007CC273 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D3885CF41B01E51E007CC273 /* Dynamixel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dynamixel.cpp; sourceTree = "<group>"; };
+		D3885CF51B01E51E007CC273 /* Dynamixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dynamixel.h; sourceTree = "<group>"; };
+		D3885CF81B01E74F007CC273 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../../../opt/local/lib/libboost_system-mt.dylib"; sourceTree = "<group>"; };
+		D3885CFB1B023A9D007CC273 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../../../opt/local/lib/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3885CFA1B01E74F007CC273 /* libboost_system-mt.dylib in Frameworks */,
+				D3885CFC1B023A9D007CC273 /* libboost_thread-mt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +52,8 @@
 			children = (
 				D3885CEC1B01E484007CC273 /* DynamixelCpp */,
 				D3885CEB1B01E484007CC273 /* Products */,
+				D3885CF81B01E74F007CC273 /* libboost_system-mt.dylib */,
+				D3885CFB1B023A9D007CC273 /* libboost_thread-mt.dylib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				D3885CED1B01E484007CC273 /* main.cpp */,
+				D3885CF41B01E51E007CC273 /* Dynamixel.cpp */,
+				D3885CF51B01E51E007CC273 /* Dynamixel.h */,
 			);
 			path = DynamixelCpp;
 			sourceTree = "<group>";
@@ -119,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3885CEE1B01E484007CC273 /* main.cpp in Sources */,
+				D3885CF61B01E51E007CC273 /* Dynamixel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +216,15 @@
 		D3885CF21B01E484007CC273 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/opt/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +232,15 @@
 		D3885CF31B01E484007CC273 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/opt/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
